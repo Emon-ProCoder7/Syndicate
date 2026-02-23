@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --syndicate-black: #050505;
+    --syndicate-neon: #00FF88;
+    --syndicate-border: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--syndicate-black);
+    color: #FFFFFF;
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.mono {
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+}
+
+.glass-panel {
+    background: rgba(10, 10, 10, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.convergence-line {
+    position: absolute;
+    top: 50%;
+    width: 0%;
+    height: 1px;
+    z-index: 50;
+}
+
+.line-left {
+    left: 0;
+}
+
+.line-right {
+    right: 0;
+}
+
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--syndicate-black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--syndicate-neon);
+}
+
+/* Pulse Animation */
+@keyframes pulse-dot {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse-dot 2s infinite ease-in-out;
+}
